@@ -7,11 +7,11 @@ app "gitops-example" {
   }
 
   build {
-    use "pack" {}
+    use "docker" {}
     registry {
       use "docker" {
         image = "onlydole/gitops-example"
-        tag   = "1"
+        tag   = "latest"
       }
     }
   }

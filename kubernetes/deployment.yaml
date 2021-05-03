@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-deployment
+  name: gitops-example
   labels:
     app: gitops-example
 spec:
@@ -25,4 +25,4 @@ spec:
           # Ensure we set PORT for the URL service. This is only necessary
           # if we want the URL service to function.
           - name: PORT
-            value: "3000"
+            value: "8080"
