@@ -7,8 +7,7 @@ app "gitops" {
     registry {
       use "aws-ecr" {
         region = "us-west-2"
-        repository = "gitops"
-        tag = "uptown-func"
+        tag = "latest"
       }
     }
   }
