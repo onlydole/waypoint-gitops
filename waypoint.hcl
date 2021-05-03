@@ -12,6 +12,7 @@ app "gitops-example" {
       use "docker" {
         image = "onlydole/gitops-example"
         tag   = "latest"
+        local = true
       }
     }
   }
