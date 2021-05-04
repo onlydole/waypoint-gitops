@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minecraft
+  labels:
+    app: minecraft
+spec:
+  selector:
+    matchLabels:
+      app: minecraft
+  template:
+    metadata:
+      labels:
+        app: minecraft
+    spec:
+      containers:
+        - image: itzg/minecraft-server
+          name: minecraft
+          env:
+            - name: EULA
+              value: "true"
+          ports:
+            - containerPort: 25565
+              name: main
+          readinessProbe:
+            exec:
+              command:
+                - mcstatus
+                - localhost
+                - ping
+            initialDelaySeconds: 65
+            periodSeconds: 5
+          livenessProbe:
+            exec:
+              command:
+                - mcstatus
+                - localhost
+                - ping
+            initialDelaySeconds: 65
+            periodSeconds: 5
+          volumeMounts:
+            - name: mc-data
+              mountPath: /data
+      volumes:
+        - name: mc-data
+          emptyDir: {}
