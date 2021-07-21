@@ -14,6 +14,6 @@ def handler(event:, context:)
         "headers": {
             "Content-Type": "text/html"
         },
-        "body": "<html><body><h1>Happy Day, #{name} from AWS Lambda?</h1></html></body>"
+        "body": "<html><body><h1>Happy Monday, #{name} from AWS Lambda?</h1></html></body>"
     }
 end
