@@ -12,7 +12,6 @@ app "kubernetes-apply" {
       use "docker" {
         image = "onlydole/kubernetes-apply"
         tag   = "latest"
-        local = true
       }
     }
   }
