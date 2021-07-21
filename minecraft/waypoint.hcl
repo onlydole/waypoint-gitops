@@ -9,7 +9,7 @@ app "minecraft" {
   build {
     use "docker-pull" {
       image = "itzg/minecraft-server"
-      tag   = "latest"
+      tag   = "2021.16.0"
     }
   }
 

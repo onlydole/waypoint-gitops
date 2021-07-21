@@ -1,8 +1,8 @@
-project = "gitops-example"
+project = "kubernetes-apply"
 
-app "gitops-example" {
+app "kubernetes-apply" {
   labels = {
-    "service" = "gitops-example",
+    "service" = "kubernetes-apply",
     "env"     = "dev"
   }
 
@@ -10,7 +10,7 @@ app "gitops-example" {
     use "docker" {}
     registry {
       use "docker" {
-        image = "onlydole/gitops-example"
+        image = "onlydole/kubernetes-apply"
         tag   = "latest"
         local = true
       }
@@ -25,7 +25,7 @@ app "gitops-example" {
 
       // This label determines what resources we own. Any that aren't present
       // in our folder that match this label will be deleted.
-      prune_label = "app=gitops-example"
+      prune_label = "app=kubernetes-apply"
     }
   }
 }

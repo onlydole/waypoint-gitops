@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gitops-example
+  name: kubernetes-apply
   labels:
-    app: gitops-example
+    app: kubernetes-apply
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: gitops-example
+      app: kubernetes-apply
   template:
     metadata:
       labels:
-        app: gitops-example
+        app: kubernetes-apply
     spec:
       containers:
-      - name: gitops-example
+      - name: kubernetes-apply
         image: ${artifact.image}:${artifact.tag}
         env:
           %{ for k,v in entrypoint.env }
